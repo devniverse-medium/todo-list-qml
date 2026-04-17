@@ -1,0 +1,11 @@
+<RCC>
+    <qresource prefix="/">
+        <file>main.qml</file>
+        <file>MainScreenDesign.ui.qml</file>
+        <file>MainScreen.qml</file>
+        <file>custom/CustomButton.qml</file>
+        <file>custom/CustomButtonDesign.ui.qml</file>
+        <file>custom/EditTextFieldDesign.ui.qml</file>
+        <file>custom/EditTextField.qml</file>
+    </qresource>
+</RCC>
