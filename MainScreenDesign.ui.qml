@@ -53,6 +53,7 @@ Item {
 
             CustomButton {
                 id: btnPlus
+                vText: "+"
                 Layout.fillHeight: true
                 Layout.preferredWidth: 50
             }
