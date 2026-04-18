@@ -6,7 +6,7 @@
 class MainScreenControl : public QObject {
     Q_OBJECT
   public:
-    MainScreenControl();
+    Q_INVOKABLE void test();
 };
 
 #endif // MAINSCREENCONTROL_H

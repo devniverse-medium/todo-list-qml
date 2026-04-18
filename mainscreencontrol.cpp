@@ -1,3 +1,7 @@
 #include "mainscreencontrol.h"
+#include <QDebug>
 
-MainScreenControl::MainScreenControl() {}
+void MainScreenControl::test() {
+    qInfo() << "";
+    return;
+}
