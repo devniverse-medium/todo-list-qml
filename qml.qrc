@@ -7,5 +7,7 @@
         <file>custom/CustomButtonDesign.ui.qml</file>
         <file>custom/EditTextFieldDesign.ui.qml</file>
         <file>custom/EditTextField.qml</file>
+        <file>TopBarDesign.ui.qml</file>
+        <file>TopBar.qml</file>
     </qresource>
 </RCC>
