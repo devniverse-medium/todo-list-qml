@@ -1,5 +1,6 @@
 import QtQuick 2.15
 import QtQuick.Layouts
+import QtQuick.Controls
 import "custom"
 
 Item {
@@ -7,6 +8,9 @@ Item {
 
     property alias btnPlus: btnPlus
     property alias textField: textField
+    property alias tasks: tasks
+
+    signal deleteTask(int index)
 
     anchors.fill: parent
 
@@ -56,6 +60,57 @@ Item {
                 vText: "+"
                 Layout.fillHeight: true
                 Layout.preferredWidth: 50
+            }
+        }
+
+        ListView {
+            id: tasks
+
+            anchors {
+                top: addItemRow.bottom
+                topMargin: 20
+                left: parent.left
+                right: parent.right
+                bottom: parent.bottom
+                margins: 20
+            }
+
+            delegate: Rectangle {
+                    width: ListView.view.width
+                    height: 50
+                    color: "transparent"
+                    border { width: 1; color: "#ccc" }
+
+                    Text {
+                        text: model.dsTask
+                        anchors.verticalCenter: parent.verticalCenter
+                        anchors.left: parent.left
+                        anchors.leftMargin: 10
+                    }
+
+                    CheckBox {
+                        id: checkbox
+                        checked: model.isDone
+                        anchors.right: btnDelete.left
+                        anchors.verticalCenter: parent.verticalCenter
+                    }
+
+                    Button {
+                        id: btnDelete
+                        text: "Apagar"
+                        width: 50
+                        height: 20
+                        anchors.right: parent.right
+                        anchors.rightMargin: 10
+                        anchors.verticalCenter: parent.verticalCenter
+
+                        Connections {
+                            target: btnDelete
+                            function onClicked() {
+                                root.deleteTask(index)
+                            }
+                        }
+                    }
             }
         }
     }

@@ -7,9 +7,17 @@ MainScreenDesign {
 
     btnPlus.onClicked: function() {
         let descTarefa = textField.text
+
+        control.addTask(descTarefa)
     }
 
-    Component.onCompleted: control.test()
+    Component.onCompleted: function() {
+        tasks.model = control.tasks
+    }
+
+    onDeleteTask: function(index) {
+        control.deleteTask(index)
+    }
 
     MainScreenControl {
         id: control
