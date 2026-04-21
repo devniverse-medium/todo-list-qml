@@ -19,6 +19,10 @@ MainScreenDesign {
         control.deleteTask(index)
     }
 
+    onDoneTask: function(index) {
+        control.doneTask(index)
+    }
+
     MainScreenControl {
         id: control
     }

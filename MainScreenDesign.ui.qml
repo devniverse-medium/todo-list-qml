@@ -11,6 +11,7 @@ Item {
     property alias tasks: tasks
 
     signal deleteTask(int index)
+    signal doneTask(int index)
 
     anchors.fill: parent
 
@@ -93,6 +94,13 @@ Item {
                         checked: model.isDone
                         anchors.right: btnDelete.left
                         anchors.verticalCenter: parent.verticalCenter
+
+                        Connections {
+                            target: checkbox
+                            function onChecked() {
+                                root.doneTask(index)
+                            }
+                        }
                     }
 
                     Button {
