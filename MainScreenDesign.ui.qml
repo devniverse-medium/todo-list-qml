@@ -87,6 +87,7 @@ Item {
                         anchors.verticalCenter: parent.verticalCenter
                         anchors.left: parent.left
                         anchors.leftMargin: 10
+                        font.strikeout: model.isDone
                     }
 
                     CheckBox {
@@ -97,7 +98,7 @@ Item {
 
                         Connections {
                             target: checkbox
-                            function onChecked() {
+                            function onToggled() {
                                 root.doneTask(index)
                             }
                         }
